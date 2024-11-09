@@ -55,7 +55,9 @@ async function sendRequest() {
 
   const result = await response.json();
 
-  document.getElementById('response').innerText = JSON.stringify(result, null, 2);
+  document.getElementById('responseStatus').innerText = result.statusCode;
+  document.getElementById('responseHeaders').innerText = JSON.stringify(result.headers, null, 2);
+  document.getElementById('responseBody').innerText = JSON.stringify(result.data, null, 2);
   
   loadHistory();
 }
@@ -101,8 +103,8 @@ function loadRequestFromHistory(entry) {
   document.getElementById('body').value = bodyEditor.setValue(entry.body ? JSON.stringify(entry.body, null, 2) : '');
 }
 
-function copyResponse() {
-  const responseText = document.getElementById('response').innerText;
+function copyResponseParts(partId) {
+  const responseText = document.getElementById(partId).innerText;
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(responseText)

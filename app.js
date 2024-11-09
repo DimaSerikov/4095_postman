@@ -25,20 +25,30 @@ app.post('/send-request', async (req, res) => {
       method,
       headers,
       data: body,
+      maxRedirects: 0,
+      validateStatus: null,
     });
-    
-    history.push({ url, method, headers, body });
-    
-    res.json({
+
+    const result = {
       statusCode: response.status,
       contentType: response.headers['content-type'],
       data: response.data,
       headers: response.headers,
-    });
-  } catch (error) {
-    const errResponse = error.response || { status: 500, data: 'Ошибка' };
+    };
     
-    res.json(errResponse);
+    history.push({ url, method, headers, body });
+
+    res.json(result);
+  } catch (error) {
+    if (error.response) {
+      res.json({
+        statusCode: error.response.status,
+        headers: error.response.headers,
+        data: error.response.data,
+      });
+    } else {
+      res.status(500).json({ error: 'Request failed' });
+    }
   }
 });
 

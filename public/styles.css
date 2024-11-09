@@ -36,7 +36,7 @@ input, select, label {
   padding: 5px;
   border-radius: 3px;
 }
-#response {
+.response div pre {
   font-size: .7em;
   border: 1px solid #ccc;
   padding: 10px;
@@ -45,7 +45,7 @@ input, select, label {
 }
 .btn-clipboard {
   position: absolute;
-  top: 2rem;
+  top: .8rem;
   right: 0.65rem;
   z-index: 10;
   display: block;
@@ -58,7 +58,6 @@ input, select, label {
 }
 .response {
   position: relative;
-
 }
 
 .CodeMirror.cm-s-default {

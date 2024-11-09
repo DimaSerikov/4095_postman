@@ -74,8 +74,21 @@
 
                 <div class="response">
                     <h2>Response</h2>
-                    <button type="button" class="btn-clipboard" title="" data-bs-original-title="Copy to clipboard" onclick="copyResponse()">Copy</button>
-                    <pre id="response"></pre>
+                    <div style="position:relative;">
+                        <button type="button" class="btn-clipboard" title="" data-bs-original-title="Copy to clipboard" onclick="copyResponseParts('responseStatus')">Copy</button>
+                        <strong>Status:</strong>
+                        <pre id="responseStatus"></pre>
+                    </div>
+                    <div style="position:relative;">
+                        <button type="button" class="btn-clipboard" title="" data-bs-original-title="Copy to clipboard" onclick="copyResponseParts('responseHeaders')">Copy</button>
+                        <strong>Headers:</strong>
+                        <pre id="responseHeaders"></pre>
+                    </div>
+                    <div style="position:relative;">
+                        <button type="button" class="btn-clipboard" title="" data-bs-original-title="Copy to clipboard" onclick="copyResponseParts('responseBody')">Copy</button>
+                        <strong>Body:</strong>
+                        <pre id="responseBody"></pre>
+                    </div>
                 </div>
             </div>
         </div>
