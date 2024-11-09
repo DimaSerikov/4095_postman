@@ -1,0 +1,66 @@
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+main > .container {
+  padding: 60px 15px 0;
+}
+
+button {
+  display: block;
+  margin: 30px 0;
+}
+h2 {
+  margin-top: 40px;
+  display: block;
+}
+input, select, label {
+  display: block;
+  width: 100%;
+}
+#history {
+  font-size: .8em;
+}
+#history div {
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 3px;
+}
+#response {
+  font-size: .7em;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 3px;
+  min-height: 60px;
+}
+.btn-clipboard {
+  position: absolute;
+  top: 2rem;
+  right: 0.65rem;
+  z-index: 10;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  font-size: .65em;
+  color: #0d6efd;
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: 0.25rem;
+}
+.response {
+  position: relative;
+
+}
+
+.CodeMirror.cm-s-default {
+  border: 1px solid #ccc;
+}
